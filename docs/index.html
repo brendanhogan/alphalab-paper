@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="AlphaLab: Autonomous Multi-Agent Research Across Optimization Domains with Frontier LLMs">
+  <meta name="keywords" content="AlphaLab, Autonomous Research, Multi-Agent, LLM, CUDA, Pretraining, Forecasting">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlphaLab: Autonomous Multi-Agent Research</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <style>
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
+    }
+    .publication-authors {
+      font-family: 'Google Sans', sans-serif;
+    }
+    .publication-authors a {
+      color: hsl(204, 86%, 53%) !important;
+    }
+    .publication-authors a:hover {
+      text-decoration: underline;
+    }
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+    .hero-body {
+      padding-bottom: 1rem;
+    }
+    .section {
+      padding: 3rem 1.5rem;
+    }
+    .footer {
+      padding: 2rem 1.5rem;
+    }
+    .subtitle {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1rem !important;
+      line-height: 1.6;
+      margin-top: 1rem;
+    }
+    .content h3 {
+      margin-top: 2rem;
+    }
+    /* result cards */
+    .result-card {
+      background: #f5f5f5;
+      border-radius: 10px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    .result-card .number {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 2.5em;
+      font-weight: 700;
+      color: hsl(204, 86%, 40%);
+      line-height: 1.1;
+    }
+    .result-card .label {
+      font-size: 0.85em;
+      color: #666;
+      margin-top: 0.5rem;
+      font-weight: 400 !important;
+      text-transform: none !important;
+    }
+    /* playbook quotes */
+    .playbook-quote {
+      border-left: 4px solid hsl(204, 86%, 53%);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      background: #f9f9f9;
+      border-radius: 0 6px 6px 0;
+    }
+    .playbook-quote strong {
+      color: hsl(204, 86%, 35%);
+    }
+    /* video container */
+    .video-container video {
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    }
+    /* screenshot images */
+    .screenshot-img {
+      border-radius: 6px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero / Title -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <span style="font-variant: small-caps;">AlphaLab</span>: Autonomous Multi-Agent Research Across Optimization Domains with Frontier LLMs
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://x.com/brendanh0gan" target="_blank">Brendan R. Hogan</a>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=9jKJmcgAAAAJ&hl=en" target="_blank">Xiwen Chen</a>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/james-wilson-0008762b2/" target="_blank">James T. Wilson</a>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=cfIrwmAAAAAJ&hl=en" target="_blank">Kashif Rasul</a>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/adelb/" target="_blank">Adel Boyarsky</a>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/tkamei/" target="_blank">Thomas Kamei</a>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=KLyaFtUAAAAJ&hl=en" target="_blank">Anderson Schneider</a>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=Hui4EIcAAAAJ&hl=en" target="_blank">Yuriy Nevmyvaka</a></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Morgan Stanley</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hero figure: pipeline -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="assets/pipeline.png" alt="AlphaLab Pipeline Overview" style="width: 100%; height: auto;">
+      <h2 class="subtitle has-text-centered">
+        Given a dataset and a natural-language objective, <span style="font-variant: small-caps;">AlphaLab</span> autonomously adapts to the domain, explores the data, builds its own evaluation framework, and runs large-scale GPU experiments&mdash;accumulating domain knowledge in a persistent playbook. Each campaign costs $150&ndash;200 in API calls.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present <span style="font-variant: small-caps;">AlphaLab</span>, an autonomous research harness that leverages frontier LLM agentic capabilities to automate the full experimental cycle in quantitative, computation-intensive domains. Given only a dataset and a natural-language objective, <span style="font-variant: small-caps;">AlphaLab</span> proceeds through three phases without human intervention: (1) it adapts to the domain and explores the data, writing analysis code and producing a research report; (2) it constructs and adversarially validates its own evaluation framework; and (3) it runs large-scale GPU experiments via a Strategist/Worker loop, accumulating domain knowledge in a persistent playbook that functions as a form of online prompt optimization.
+          </p>
+          <p>
+            We evaluate with two frontier LLMs (GPT-5.2 and Claude Opus 4.6) on three domains: <strong>CUDA kernel optimization</strong>, where it writes GPU kernels that run 4.4&times; faster than <code>torch.compile</code> on average (up to 91&times;); <strong>LLM pretraining</strong>, where the full system achieves 22% lower validation loss than a single-shot baseline; and <strong>traffic forecasting</strong>, where it beats standard baselines by 23&ndash;25%. The two models discover qualitatively different solutions in every domain&mdash;neither dominates uniformly&mdash;suggesting that multi-model campaigns provide complementary search coverage.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Headline Results -->
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results at a Glance</h2>
+        <div class="columns is-centered">
+          <div class="column is-4">
+            <div class="result-card">
+              <div class="number">4.4&times;</div>
+              <div class="label">Mean CUDA kernel speedup<br>over torch.compile (up to 91&times;)</div>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="result-card">
+              <div class="number">22%</div>
+              <div class="label">Lower validation loss on<br>LLM pretraining vs. baseline</div>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="result-card">
+              <div class="number">25%</div>
+              <div class="label">Lower RMSE on traffic<br>forecasting vs. seasonal naive</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Demo Video -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Demo</h2>
+        <div class="content has-text-justified">
+          <p>
+            <span style="font-variant: small-caps;">AlphaLab</span> running autonomously on a simple synthetic time-series forecasting dataset (extremely sped up). In practice, Phase 1 (data exploration and literature research) takes 2&ndash;3 hours, Phase 2 (evaluation construction) takes about 1 hour, and Phase 3 (GPU experimentation) runs indefinitely&mdash;a single experiment iteration typically takes a few hours. The dashboard shows the Kanban board tracking experiments through their lifecycle, a live leaderboard ranking results, a file viewer for generated code, and a real-time stream of agent tool calls and reasoning.
+          </p>
+        </div>
+        <div class="video-container">
+          <video controls preload="metadata" style="width: 100%; height: auto;" poster="assets/phase_3.png">
+            <source src="assets/AlphaLabDemo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">How It Works</h2>
+
+        <h3 class="title is-4">Phase 0: Adapter Resolution</h3>
+        <div class="content has-text-justified">
+          <p>
+            All domain-specific behavior is parameterized by a <strong>domain adapter</strong>: 11 files comprising metric definitions, prompt templates for each agent role, and a domain knowledge document injected into every agent's context. For novel domains, the model generates all adapter files from scratch by examining the dataset and searching the web for relevant prior work. The key idea is that <em>prompt engineering is performed by the model</em>, grounded in the actual data.
+          </p>
+        </div>
+
+        <h3 class="title is-4">Phase 1: Data Exploration</h3>
+        <div class="content has-text-justified">
+          <p>
+            An Explorer agent operates autonomously for several hours: it generates a plan, then works through it&mdash;writing and running Python scripts, generating plots, searching the web for relevant papers, and updating its notes after each finding. It produces a human-readable research report and machine-readable learnings consumed by later phases.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-10">
+            <img src="assets/phase_1_todo.png" alt="Phase 1: Explorer agent plan" class="screenshot-img" style="width: 100%; height: auto;">
+            <p class="has-text-centered is-size-7"><em>The Explorer agent's auto-generated research plan for the exchange-rate domain. Items are checked off as the agent completes them. The right pane shows real-time agent reasoning.</em></p>
+          </div>
+        </div>
+
+        <div class="columns is-centered" style="margin-top: 1.5rem;">
+          <div class="column is-10">
+            <img src="assets/phase_1_plots.png" alt="Phase 1: Generated analysis plots" class="screenshot-img" style="width: 100%; height: auto;">
+            <p class="has-text-centered is-size-7"><em>Analytical plots generated autonomously by the Explorer. The agent writes the Python scripts, generates the visualizations, and views them via the view_image tool to inform its analysis.</em></p>
+          </div>
+        </div>
+
+        <h3 class="title is-4">Phase 2: Adversarial Evaluation Construction</h3>
+        <div class="content has-text-justified">
+          <p>
+            Evaluation correctness is the single most important property of an autonomous research system. A <strong>Builder</strong> constructs the full evaluation framework; a <strong>Critic</strong> (a fresh agent with no shared context) audits for data leakage, lookahead bias, and metric errors; and a <strong>Tester</strong> writes and runs an automated test suite. The loop iterates until all tests pass.
+          </p>
+        </div>
+
+        <h3 class="title is-4">Phase 3: GPU-Scale Experimentation</h3>
+        <div class="content has-text-justified">
+          <p>
+            The core of the system: a sustained experimental campaign where the <strong>Strategist</strong> proposes experiments, <strong>Workers</strong> implement and execute them on a GPU cluster via Slurm, and a persistent <strong>playbook</strong> accumulates domain knowledge. Budget management graduates from broad exploration to focused refinement. A <strong>Supervisor</strong> monitors health and patches the domain knowledge when error rates spike.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-10">
+            <img src="assets/phase_3.png" alt="Phase 3: GPU experimentation dashboard" class="screenshot-img" style="width: 100%; height: auto;">
+            <p class="has-text-centered is-size-7"><em>Phase 3 dashboard: the Kanban board (center, top) shows experiments in various stages; the leaderboard (center, bottom) ranks completed experiments. The right pane shows the active Worker agent implementing an experiment.</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Detailed Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Experimental Results</h2>
+
+        <h3 class="title is-4">Multi-Model Search Coverage</h3>
+        <div class="content has-text-justified">
+          <p>
+            A central finding is that different frontier models discover different solutions in every domain. On CUDA kernels, GPT-5.2 leads; on LLM pretraining and traffic forecasting, Opus 4.6 leads. Neither dominates uniformly. Even within the same model family, Opus and Sonnet 4.6 discover qualitatively different architectures.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-10">
+            <img src="assets/llm_speedrun_overview.png" alt="LLM pretraining speedrun: variance and model comparison" style="width: 100%; height: auto;">
+            <p class="has-text-centered is-size-7"><em><strong>LLM pretraining speedrun.</strong> The blue curve shows the distribution of best val_bpb across five independent runs with identical inputs. Opus 4.6 (orange) lies entirely to the left of every GPT-5.2 run. Multi-model campaigns access regions of the search space that neither model would find alone.</em></p>
+          </div>
+        </div>
+
+        <h3 class="title is-4">Convergence</h3>
+        <div class="content has-text-justified">
+          <p>
+            All campaigns show a characteristic pattern: rapid improvement in experiments 1&ndash;15 as the system explores the most promising architectural families, followed by diminishing returns in the refinement phase. By experiment 25&ndash;30, the running-best metric has typically stabilized to within 5% of the final value.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-10">
+            <img src="assets/convergence_all.png" alt="Convergence curves across all domains" style="width: 100%; height: auto;">
+            <p class="has-text-centered is-size-7"><em>Convergence curves across all three domains. Both models improve rapidly in the first 10&ndash;15 experiments and plateau by 25&ndash;30.</em></p>
+          </div>
+        </div>
+
+        <h3 class="title is-4">CUDA Kernel Optimization</h3>
+        <div class="content has-text-justified">
+          <p>
+            On KernelBench (100 single-operator + 100 fusion tasks), <span style="font-variant: small-caps;">AlphaLab</span> writes custom GPU kernels and benchmarks them against PyTorch's optimized compiler. The system discovers algebraic rewrites (diagonal matmul &rarr; elementwise multiply, 68&times;), warp-shuffle reductions (75&times;), and operator fusion strategies (LayerNorm + residual, 91&times;). It also learns what <em>not</em> to attempt: handwritten convolution kernels consistently lose to cuDNN.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-10">
+            <img src="assets/cuda_speedup_hist.png" alt="CUDA kernel speedup distribution" style="width: 100%; height: auto;">
+            <p class="has-text-centered is-size-7"><em>Distribution of per-task speedups over torch.compile. The distribution is heavy-tailed: a small number of tasks achieve extreme speedups (&gt;10&times;), while most cluster in the 1&ndash;5&times; range.</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Playbook -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">What the System Discovers</h2>
+        <div class="content has-text-justified">
+          <p>
+            The <strong>playbook</strong> is perhaps the most interesting artifact the system produces. It starts empty; by the end of a campaign it contains domain-specific methodology that did not exist anywhere in <span style="font-variant: small-caps;">AlphaLab</span>'s prompts or code at launch. The "do not attempt" entries are as valuable as positive findings, preventing budget waste on disproven approaches.
+          </p>
+        </div>
+
+        <div class="playbook-quote">
+          <strong>CUDA kernels</strong> (GPT-5.2): "Diagonal matrix ops: diag(A) &middot; B is just elementwise multiply of the diagonal vector with each row of B. Yields 10&ndash;68&times; over PyTorch's full matmul. Warp-shuffle reductions yield 73&ndash;75&times; on sum operations. Do not attempt convolution kernels: cuDNN is too well-optimized; handwritten runs at 0.05&ndash;0.73&times;."
+        </div>
+
+        <div class="playbook-quote">
+          <strong>LLM pretraining</strong> (Opus 4.6): "Wider-shallower architectures (10&ndash;12 layers, 672&ndash;752-dim) outperform deeper-narrower at this parameter budget. QK-norm stabilizes training at high learning rates."
+        </div>
+
+        <div class="playbook-quote">
+          <strong>LLM pretraining</strong> (GPT-5.2): "Disable torch.compile: compilation overhead is significant under a 20-min budget. GQA reduces memory and enables larger batch sizes."
+        </div>
+
+        <div class="playbook-quote">
+          <strong>Traffic forecasting</strong> (GPT-5.2): "Per-horizon affine calibration on top of iTransformer predictions is the single most impactful post-processing step: adding it consistently pushes RMSE below 0.023 where the raw model sits above it."
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{hogan2026alphalab,
+  author    = {Hogan, Brendan R. and Chen, Xiwen and Wilson, James T.
+               and Rasul, Kashif and Boyarsky, Adel and Kamei, Thomas
+               and Schneider, Anderson and Nevmyvaka, Yuriy},
+  title     = {AlphaLab: Autonomous Multi-Agent Research Across
+               Optimization Domains with Frontier LLMs},
+  journal   = {arXiv preprint},
+  year      = {2026}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" target="_blank" href="#">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="#" target="_blank" class="external-link">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            This website template is borrowed from <a href="https://nerfies.github.io" target="_blank">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
